@@ -1,0 +1,92 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #f5e8d9; /* Light beige background */
+    color: #4a2c2a;
+    display: flex;
+    flex-direction: column; /* Ensure the sidebar content is stacked vertically */
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar-brand {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.sidebar-logo {
+    width: 120px; /* Adjust the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 1rem; /* Add spacing below the logo */
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack menu items vertically */
+    gap: 1rem; /* Add spacing between items */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar-item {
+    text-align: left;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar-item a,
+.logout-button {
+    text-decoration: none;
+    color: #4a2c2a;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar-item a:hover {
+    color: #8b4414; /* Slightly darker brown for hover effect */
+}
+
+.logout-button:hover {
+    background-color: white; /* Highlight color on hover */
+    color: #8b4414;
+}
+
+.sidebar-icon {
+    font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        padding: 0.5rem;
+    }
+
+    .sidebar-logo {
+        width: 100px;
+    }
+
+    .sidebar-item a,
+    .logout-button {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+}

@@ -1,0 +1,103 @@
+.dashboard {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.landing-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    min-height: 500px;
+    overflow: hidden; /* Ensure no extra content overflows */
+}
+
+.banner-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Place the image behind the text */
+    object-fit: cover; /* Ensure the image covers the entire viewport */
+    pointer-events: none; /* Prevent the image from interfering with user interactions */
+}
+
+.hero-text {
+    position: relative;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    z-index: 1; /* Ensure the text is above the image */
+    padding: 20px;
+    display: inline-block; /* Ensure the text is wrapped properly */
+    background: none; /* Remove any background color */
+    border-radius: 0; /* Remove rounded corners */
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-family: 'The Seasons', serif; /* Apply The Seasons font */
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-top: 500px;
+}
+
+.dashboard-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    background: none; /* Ensure no background color is applied */
+}
+
+.dashboard-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .dashboard-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dashboard-card {
+        width: 100%;
+    }
+}

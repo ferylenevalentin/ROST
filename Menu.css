@@ -1,0 +1,188 @@
+.menu-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align title to the left and icons to the right */
+  padding: 50px 100px; /* Adjust padding for spacing */
+  font-family: 'Montserrat', serif !important;
+  background-color: #fff; /* Optional: Add a background color for clarity */
+  position: sticky; /* Keep the header fixed */
+  top: 0; /* Stick to the top of the page */
+  z-index: 10; /* Ensure it stays above other content */
+   /* Optional: Add a shadow for better visibility */
+}
+
+.menu-header-row .menu-title {
+  font-size: 80px; /* Adjust font size */
+  font-weight: bold;
+  color: #433628;
+  letter-spacing: 2px;
+  line-height: 1;
+  flex: 1; /* Ensures the title takes up available space */
+  text-align: left;
+}
+
+.menu-icons {
+  display: flex;
+  gap: 16px; /* Space between icons */
+}
+
+.menu-icon-circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f3f3f3;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.menu-icon-circle:hover {
+  transform: scale(1.1);
+  background-color: #ded4cc;
+}
+
+.menu-icon-circle.active {
+  background-color: #433628;
+  color: #fff;
+}
+
+.menu-icon-circle img {
+  width: 30px;
+  height: 30px;
+}
+
+.menu-icon-circle .menu-icon-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #433628;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.menu-icon-circle.active .menu-icon-text {
+  color: #fff;
+}
+
+.product-list {
+  padding: 20px 80px; /* Add spacing around the product list */
+  display: flex;
+  flex-wrap: wrap; /* Ensure products wrap to the next line */
+  gap: 20px; /* Space between product cards */
+  min-height: calc(100vh - 200px); /* Ensure the product list takes up at least the remaining viewport height */
+}
+
+.product-card {
+  background: #433628;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(67, 54, 40, 0.12);
+  width: 300px;
+  height: 320px;
+  padding: 25px 15px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+  overflow: hidden; /* Ensure content doesn't overflow */
+  position: relative; /* For proper positioning of expanded content */
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 16px rgba(67, 54, 40, 0.2);
+  transform: scale(1.05); /* Slightly enlarge the card */
+  height: auto; /* Allow the card to expand vertically */
+  z-index: 5; /* Ensure the expanded card appears above others */
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  background: #fff;
+}
+
+.product-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 0 18px 0;
+  font-family: 'Montserrat', serif !important;
+}
+
+.product-name {
+  color: #fff;
+  font-weight: 1000;
+  font-size: 22px;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  white-space: normal !important;
+  overflow: hidden !important;
+  word-break: break-word !important;
+  font-family: 'Montserrat', serif !important;
+}
+
+.product-price {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 10px;
+  top: 2px;
+  position: relative;
+  font-family: 'Montserrat', serif !important;
+}
+
+.product-description {
+  color: #ded4cc;
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 0;
+  padding: 0 2px 0 0;
+  font-family: 'Montserrat', serif !important;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.2px;
+  width: 100%;
+  max-height: 80px; /* Default height for non-hovered cards */
+  overflow: hidden;
+  white-space: normal;
+  text-align: center;
+  transition: max-height 0.3s ease-in-out; /* Smooth transition for expanding */
+}
+
+.product-card:hover .product-description {
+  max-height: none; /* Remove height restriction on hover */
+  overflow: visible; /* Allow full content to be visible */
+}
+@media (max-width: 768px) {
+  .menu-header-row {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+  }
+
+  .menu-title {
+      font-size: 40px;
+      text-align: center;
+  }
+
+  .menu-icons {
+      justify-content: center;
+      gap: 10px;
+  }
+
+  .product-list {
+      padding: 10px;
+      gap: 10px;
+  }
+
+  .product-card {
+      width: 100%;
+      height: auto;
+  }
+}

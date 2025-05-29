@@ -1,0 +1,123 @@
+/* General Navbar Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5e8d9; /* Light beige background */
+    padding: 1rem 2rem;
+    color: #4a2c2a; /* Dark brown text color */
+    width: 100%; /* Ensure the navbar spans the full width */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    position: fixed; /* Make the navbar fixed at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    font-family: 'Montserrat', serif !important;
+}
+
+.navbar-brand h1 {
+    font-size: 1.8rem;
+    color: #4a2c2a; /* Dark brown */
+    margin: 0;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem; /* Increase spacing between menu items */
+    margin: 0;
+    padding: 0;
+    transition: max-height 0.3s ease-in-out; /* Smooth transition for dropdown */
+    overflow: hidden;
+}
+
+li {
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #4a2c2a; /* Dark brown */
+    font-weight: bold; /* Make navbar items bold */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #8b4414; /* Slightly darker brown for hover effect */
+}
+
+body {
+    margin: 0; /* Remove default margin to avoid gaps */
+    padding-top: 4rem; /* Add padding to prevent content from overlapping the fixed navbar */
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-toggle {
+    display: none; /* Hide toggle button for larger screens */
+}
+
+.navbar-logo {
+    width: 70px; /* Adjust the size of the logo */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+.login-item {
+    color: #f5e8d9; /* Match the text color of the navbar */
+    background-color: #f5e8d9; /* Match the background color of the navbar */
+    opacity: 0.1; /* Reduce visibility */
+    font-size: 0.9rem; /* Adjust font size */
+    text-transform: uppercase; /* Optional: Make text uppercase */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Add pointer cursor */
+}
+
+.login-item:hover {
+    opacity: 0.8; /* Slightly increase visibility on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .navbar-brand {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    ul {
+        flex-direction: column;
+        gap: 1rem;
+        max-height: 0; /* Initially hide the menu */
+        width: 100%;
+        background-color: #f5e8d9; /* Match navbar background */
+        overflow: hidden; /* Hide overflowing items */
+    }
+
+    ul.show {
+        max-height: 300px; /* Show the menu when toggled */
+    }
+
+    .navbar-toggle {
+        display: block; /* Show toggle button for smaller screens */
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #4a2c2a;
+        cursor: pointer;
+    }
+
+    .navbar-logo {
+        width: 50px; /* Adjust logo size for smaller screens */
+    }
+}

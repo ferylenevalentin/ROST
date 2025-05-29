@@ -1,0 +1,21 @@
+.admin-page {
+    display: flex; /* Positions the sidebar and content side by side */
+    min-height: 100vh; /* Ensures the layout spans the full height of the viewport */
+    background-color: #f9f9f9; /* Light background for the admin page */
+}
+
+.admin-content {
+    flex: 1; /* Takes up the remaining space beside the sidebar */
+    padding: 2rem 2rem 2rem 10rem; /* Adds space inside the admin content */
+    font-family: 'Montserrat', sans-serif;
+    color: #4a2c2a; /* Dark brown text color */
+}
+@media (max-width: 768px) {
+    .admin-page {
+        flex-direction: column;
+    }
+
+    .admin-content {
+        padding: 1rem;
+    }
+}
